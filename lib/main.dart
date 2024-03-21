@@ -1,3 +1,4 @@
+import 'package:fastfoodapp/pagescustom/Profile.dart';
 import 'package:flutter/material.dart';
 import 'pagescustom/HomePage.dart';
 import 'pagescustom/CartPage.dart';
@@ -16,7 +17,6 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/":(context)=>HomePage(),
-        "cartPage": (context)=>CartPage()
       },
     );
   }
