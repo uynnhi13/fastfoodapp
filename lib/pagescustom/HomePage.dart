@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
+import 'package:fastfoodapp/pagescustom/product_review/review.dart';
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -29,6 +30,9 @@ class _HomePageState extends State<HomePage> {
       case 1:
         nameWidgets="Menu";
       case 2:
+      {
+        return const ProductReview();
+      }
         nameWidgets="Cart";
       case 3:{
         return const Profile();

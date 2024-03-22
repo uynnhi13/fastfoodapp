@@ -31,11 +31,10 @@ class Profile extends StatelessWidget {
             child: ElevatedButton(
               onPressed: (){}, 
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15), backgroundColor: color_background,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
                 ),
-                primary: color_background,
               ),
               child: const Text('Edit Profile', style: TextStyle(color: Colors.white),)
             ),
