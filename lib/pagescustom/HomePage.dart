@@ -1,8 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
+
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
 import 'package:fastfoodapp/widgetscustom/ItemsWidget.dart';
+import 'package:fastfoodapp/widgetscustom/BannerWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -55,7 +57,15 @@ class HomePage extends StatelessWidget {
               ],),
             ),
 
-
+            Container(
+              //alignment: Alignment.centerLeft,
+              margin: EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 10,
+              ),
+              
+            ),
+             BannerWidget(),
              //categories
             Container(
               //alignment: Alignment.centerLeft,
@@ -75,7 +85,7 @@ class HomePage extends StatelessWidget {
 
             //categories Widget
             CategoriesWidget(),
-
+          
             //item
             Container(
               alignment: Alignment.centerLeft,
@@ -91,7 +101,7 @@ class HomePage extends StatelessWidget {
 
             //Items Widget
             ItemsWidget(),
-
+            
           ],),
         )
       ],),

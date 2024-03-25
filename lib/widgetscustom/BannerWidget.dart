@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class BannerSlider extends StatelessWidget {
+class BannerWidget extends StatelessWidget {
   final List<String> images = [
-    'assets/images/banner1.jpg',
-    'assets/images/banner2.jpg',
-    'assets/images/banner3.jpg',
+    'assets/banner/banner.png',
+    'assets/banner/banner2.png',
+    'assets/banner/banner3.png',
     // Thêm đường dẫn của các hình ảnh banner khác nếu cần
   ];
 
