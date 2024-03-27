@@ -1,5 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pagescustom/CartPage.dart';
+import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
 import 'package:flutter/cupertino.dart';
@@ -12,11 +14,15 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+String _appBarTitle = 'Xin Chào, Uyển Nhi Lê!';
+
 class _HomePageState extends State<HomePage> {
   int _selectedIndex=0;
+  String _appBarTitle = 'Xin Chào, Uyển Nhi Lê!';
   void _onItemTapped(int index){
     setState(() {
       _selectedIndex=index;
+      _updateTitle(index);
     });
   }
 
@@ -24,20 +30,38 @@ class _HomePageState extends State<HomePage> {
     var nameWidgets="Home";
     switch(index){
       case 0:
-        nameWidgets="Home";
         break;
       case 1:
-        nameWidgets="Menu";
+        return const Menu();
       case 2:
-        nameWidgets="Cart";
+        return const CartPage();
+      case 3:
+        return const Profile();
+      default:
+        nameWidgets="None";
+    }
+  }
+   _updateTitle(int index){
+    var nameWidgets="Home";
+    switch(index){
+      case 0:
+        _appBarTitle="Xin chào, Uyển Nhi Lê!";
+        break;
+      case 1:
+      _appBarTitle="List Sản Phẩm";
+        return const Menu();
+      case 2:
+      _appBarTitle="Giỏ Hàng";
+        return const CartPage();
       case 3:{
+        _appBarTitle="Tài Khoản";
         return const Profile();
       }
       default:
         nameWidgets="None";
         break;
     }
-  }
+   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,10 +71,11 @@ class _HomePageState extends State<HomePage> {
         title: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Text(
-            'ChuChu',
+            _appBarTitle,
             style: TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
+              fontSize: 18,
             ),
           ),
           ),

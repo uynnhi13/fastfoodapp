@@ -12,6 +12,10 @@ dependencies:
   path_provider: ^2.1.2
   curved_navigation_bar: ^1.0.3
   cupertino_icons: ^1.0.2
+  # thư viện cho phần ở details product
+  clippy_flutter: ^2.0.0-nullsafety.1
+  # Thư viện icon đánh giá
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
