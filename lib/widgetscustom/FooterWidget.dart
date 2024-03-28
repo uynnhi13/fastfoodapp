@@ -46,7 +46,7 @@ class FooterWidget extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -59,7 +59,7 @@ class FooterWidget extends StatelessWidget {
                   color: Color.fromARGB(255, 155, 19, 32),
                 ),
               ),
-              SizedBox(width: 10),
+              SizedBox(width: 30),
               IconButton(
                 onPressed: () {
                   // Xử lý khi nhấn vào icon Facebook

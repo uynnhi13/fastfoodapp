@@ -11,7 +11,8 @@ class WelcomePage extends StatelessWidget {
       
       body: Container(
         decoration: BoxDecoration(
-          color:Color.fromARGB(255, 85, 23, 19), // Màu nền của body là white
+          image: DecorationImage(image: AssetImage('assets/images/backgr.jpg'),
+           fit: BoxFit.cover, )// Chỉnh ảnh nền sao cho phù hợp với kích thước của container
         ),
         child: Center(
           child: Column(
@@ -19,7 +20,7 @@ class WelcomePage extends StatelessWidget {
             children: [
                Image.asset(
               'assets/images/logo.png', // Đường dẫn của ảnh logo
-              width: 200, // Độ rộng của ảnh logo
+              width: 350, // Độ rộng của ảnh logo
             ),
               SizedBox(height: 50),
               ElevatedButton(

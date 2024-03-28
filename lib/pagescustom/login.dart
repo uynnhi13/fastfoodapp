@@ -1,3 +1,4 @@
+import 'package:fastfoodapp/pagescustom/HomePage.dart';
 import 'package:fastfoodapp/pagescustom/register.dart';
 import 'package:flutter/material.dart';
 
@@ -83,6 +84,10 @@ class _LoginState extends State<Login> {
                 SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
+                    Navigator.push(
+                      context,
+                        MaterialPageRoute(builder: (context) => HomePage()),
+                    );
                     // Xử lý đăng nhập ở đây
                     // Hiển thị snackbar sau khi đăng nhập thành công
                     ScaffoldMessenger.of(context).showSnackBar(

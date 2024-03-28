@@ -1,4 +1,7 @@
 
+import 'package:fastfoodapp/pagescustom/ContactPage.dart';
+import 'package:fastfoodapp/pagescustom/InforPage.dart';
+import 'package:fastfoodapp/pagescustom/welcomepage.dart';
 import 'package:flutter/material.dart';
 import 'pagescustom/HomePage.dart';
 import 'pagescustom/CartPage.dart';
