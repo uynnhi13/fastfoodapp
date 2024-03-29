@@ -1,4 +1,11 @@
+
 import 'package:fastfoodapp/pagescustom/Profile.dart';
+
+
+import 'package:fastfoodapp/pagescustom/ContactPage.dart';
+import 'package:fastfoodapp/pagescustom/InforPage.dart';
+import 'package:fastfoodapp/pagescustom/welcomepage.dart';
+
 import 'package:flutter/material.dart';
 import 'pagescustom/HomePage.dart';
 import 'pagescustom/CartPage.dart';
@@ -11,6 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,

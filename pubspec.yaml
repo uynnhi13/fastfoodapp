@@ -12,10 +12,16 @@ dependencies:
   path_provider: ^2.1.2
   curved_navigation_bar: ^1.0.3
   cupertino_icons: ^1.0.2
+
   # thư viện cho phần ở details product
   clippy_flutter: ^2.0.0-nullsafety.1
   # Thư viện icon đánh giá
   flutter_rating_bar: ^4.0.1
+
+  carousel_slider: ^4.2.1 
+  intl: ^0.19.0 
+  
+
 
 dev_dependencies:
   flutter_test:
@@ -25,4 +31,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
+
   - images/
+  - assets/images/
+  - assets/foods/Category/
+  - assets/foods/Bestsell/
+  - assets/banner/
+  
+
