@@ -74,13 +74,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
 
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 70,
         backgroundColor: color_background,
         title: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Text(
             _appBarTitle,
-            style: TextStyle(
+            style:const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
               fontSize: 18,
