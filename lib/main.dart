@@ -1,9 +1,15 @@
+import 'package:fastfoodapp/actions/hidenstatusbar.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'pagescustom/HomePage.dart';
 import 'pagescustom/CartPage.dart';
 
-void main() {
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await hidenstatusbar();
   runApp(MyApp());
 }
 
@@ -18,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/":(context)=>HomePage(),
       },
+
     );
   }
 }

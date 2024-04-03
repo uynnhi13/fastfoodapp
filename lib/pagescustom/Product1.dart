@@ -19,7 +19,7 @@ class Product1 extends StatelessWidget {
           ItemAppBar("Product"),
           Padding(
             padding: EdgeInsets.all(10),
-            child: Image.asset('images/garan.jpg',height: 300),
+            child: Image.asset('images/garan.jpg',height: 200,),
             ),
             //Chỉnh phần cong của Arc, nhớ cài clippy_flutter
             Arc(
@@ -39,9 +39,9 @@ class Product1 extends StatelessWidget {
                       ),
                       child: Row(children: [
                         Text(
-                          "Product Title",
+                          "Gà rán vui vẻ",
                           style: TextStyle(
-                            fontSize: 28,
+                            fontSize: 25,
                             fontWeight: FontWeight.bold
                           ),
                         ),
@@ -54,7 +54,7 @@ class Product1 extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             RatingBar.builder(
-                              initialRating: 4,
+                              initialRating: 3,
                               minRating: 1,
                               direction: Axis.horizontal,
                               itemCount: 5,
@@ -66,58 +66,6 @@ class Product1 extends StatelessWidget {
                               ),
                               onRatingUpdate: (index){},
                             ),
-                            // Chỉnh sửa số lượng sản phẩm
-                            Row(children: [
-                              Container(
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 3,
-                                      blurRadius: 10,
-                                      offset: Offset(0,3),
-                                    ),
-                                  ]
-                                ),
-                                child: Icon(
-                                  CupertinoIcons.minus,
-                                  size: 18,
-                                ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.symmetric(horizontal: 10),
-                                child: Text(
-                                  "01",
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.bold,
-                                    color: color_background,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(20),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.5),
-                                      spreadRadius: 3,
-                                      blurRadius: 10,
-                                      offset: Offset(0,3),
-                                    ),
-                                  ]
-                                ),
-                                child: Icon(
-                                  CupertinoIcons.plus,
-                                  size: 18,
-                                ),
-                              )
-                            ],)
                           ],
                         ),
                         ),
@@ -126,8 +74,8 @@ class Product1 extends StatelessWidget {
                           child: Text(
                             "1 miếng gà giòn vui vẻ. Bạn sẽ thưởng thức hương vị tuyệt vời và độ giòn ngon tuyệt khi đắm chìm vào từng miếng gà chín giòn. Một trải nghiệm thú vị đang chờ đón bạn!",
                             textAlign: TextAlign.justify,
-                            style: TextStyle(fontWeight: FontWeight.w400,
-                            fontSize: 15),
+                            style: TextStyle(fontWeight: FontWeight.normal,
+                            fontSize: 13),
                           ),
                         ),
                         Padding(
@@ -194,7 +142,7 @@ class Product1 extends StatelessWidget {
             ),
         ],
       ),
-      bottomNavigationBar: itemBottomNavBarProduct(),
+      bottomNavigationBar: ItemBottomNavBarProduct(),
     );
   }
 }
