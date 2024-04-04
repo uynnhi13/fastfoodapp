@@ -14,7 +14,7 @@ class Profile extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 70,
             backgroundImage: AssetImage(
               'images/avatar.png'),
@@ -32,11 +32,10 @@ class Profile extends StatelessWidget {
               );
               }, 
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15), backgroundColor: color_background,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(50)
                 ),
-                primary: color_background,
               ),
               child: const Text('Edit Profile', style: TextStyle(color: Colors.white),)
             ),

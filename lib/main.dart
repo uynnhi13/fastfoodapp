@@ -3,7 +3,6 @@ import 'package:fastfoodapp/pagescustom/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'pagescustom/HomePage.dart';
-import 'pagescustom/CartPage.dart';
 
 
 void main() async {
@@ -14,6 +13,8 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

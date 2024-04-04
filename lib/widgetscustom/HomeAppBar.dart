@@ -2,12 +2,14 @@ import 'package:fastfoodapp/const.dart';
 import 'package:flutter/material.dart';
 
 class HomeAppBar extends StatelessWidget {
+  const HomeAppBar({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: color_background,
-      padding: EdgeInsets.all(25),
-      child: Row(
+      padding: const EdgeInsets.all(25),
+      child: const Row(
         children: [
           Icon(
             Icons.sort,

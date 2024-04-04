@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'package:flutter/services.dart'; // Để sử dụng ByteData
 
 class Product {
