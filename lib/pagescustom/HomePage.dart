@@ -1,11 +1,14 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
+
+import 'package:fastfoodapp/pagescustom/CartPage.dart';
+import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
-import 'package:fastfoodapp/pagescustom/cart/cart.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/success_payment.dart';
-import 'package:fastfoodapp/pagescustom/cart/order_cart.dart';
-import 'package:fastfoodapp/pagescustom/product_review/review.dart';
+import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
+
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
+import 'package:fastfoodapp/widgetscustom/ItemsWidget.dart';
+import 'package:fastfoodapp/widgetscustom/BannerWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -18,11 +21,15 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+String _appBarTitle = 'Xin Chào, Uyển Nhi Lê!';
+
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-  void _onItemTapped(int index) {
+  int _selectedIndex=0;
+  String _appBarTitle = 'Xin Chào, Uyển Nhi Lê!';
+  void _onItemTapped(int index){
     setState(() {
-      _selectedIndex = index;
+      _selectedIndex=index;
+      _updateTitle(index);
     });
   }
 
@@ -30,45 +37,152 @@ class _HomePageState extends State<HomePage> {
     var nameWidgets;
     switch (index) {
       case 0:
-        nameWidgets = "Home";
         break;
       case 1:
-        {
-          return const Cart();
-        }
-        nameWidgets = "Menu";
+        return const Menu();
       case 2:
-        {
-          return const ProductReview();
-        }
-        nameWidgets = "Cart";
+        return const CartPage();
       case 3:
-        {
-          return const Profile();
-        }
+        return const Profile();
+      default:
+        nameWidgets="None";
+    }
+  }
+   _updateTitle(int index){
+    var nameWidgets="Home";
+    switch(index){
+      case 0:
+        _appBarTitle="Xin chào, Uyển Nhi Lê!";
+        break;
+      case 1:
+      _appBarTitle="List Sản Phẩm";
+        return const Menu();
+      case 2:
+      _appBarTitle="Giỏ Hàng";
+        return const CartPage();
+      case 3:{
+        _appBarTitle="Tài Khoản";
+        return const Profile();
+      }
       default:
         nameWidgets = "None";
         break;
     }
-  }
 
+   }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         toolbarHeight: 70,
         backgroundColor: color_background,
         title: const Padding(
           padding: EdgeInsets.all(25.0),
           child: Text(
-            'ChuChu',
-            style: TextStyle(
+            _appBarTitle,
+            style:const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
+              fontSize: 18,
             ),
           ),
         ),
       ),
+
+      body:ListView(children: [
+        HomeAppBar(),
+        Container(
+          //height: 500,
+          padding: EdgeInsets.only(top: 15),
+          decoration: BoxDecoration(
+            color: Color(0xFFEDECF2),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(35),
+              topRight: Radius.circular(35),
+            )
+          ),
+          child: Column(children: [
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              height: 50,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30)
+              ),
+              child: Row(children: [
+                Container(
+                  margin: EdgeInsets.only(left: 5) ,
+                  height: 50,
+                  width: 300,
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Search here..."
+                    ),
+                  ),
+                ),
+                Spacer(),
+                Icon(
+                  Icons.search,
+                  size: 27,
+                  color: Color.fromARGB(255, 155, 19, 32),
+                )
+                
+              ],),
+            ),
+
+            Container(
+              //alignment: Alignment.centerLeft,
+              margin: EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 10,
+              ),
+              
+            ),
+             BannerWidget(),
+             //categories
+            Container(
+              //alignment: Alignment.centerLeft,
+              margin: EdgeInsets.symmetric(
+                vertical: 20,
+                horizontal: 10,
+              ),
+              child: Text(
+                'Categories',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 155, 19, 32),
+                ),
+              ),
+            ),
+
+            //categories Widget
+            CategoriesWidget(),
+          
+            //item
+            Container(
+              alignment: Alignment.centerLeft,
+              margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+
+              child: Text('Best selling',
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 155, 19, 32),
+                  )),
+            ),
+
+            //Items Widget
+            ItemsWidget(),
+            
+          ],),
+        )
+      ],),
+
       bottomNavigationBar: CurvedNavigationBar(
         backgroundColor: Colors.transparent,
         height: 70,
