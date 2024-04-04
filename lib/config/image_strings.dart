@@ -49,7 +49,7 @@ class TImages {
   static const String onBoardingImage3 = "assets/images/on_boarding_images/sammy-line-delivery.gif";
 
   // -- Products
-  static const String productImage1 = "assets/images/products/nike-shoes.png";
+  static const String productImage1 = "assets/images/products/6-wings.png";
   static const String productImage2 = "assets/images/products/product-1.png";
   static const String productImage3 = "assets/images/products/product-jacket.png";
   static const String productImage4 = "assets/images/products/product-jeans.png";
@@ -157,10 +157,10 @@ class TImages {
   static const String googlePay = "assets/icons/payment_methods/google-pay.png";
   static const String creditCard = "assets/icons/payment_methods/credit-card.png";
   static const String masterCard = "assets/icons/payment_methods/master-card.png";
-  static const String paypal = "assets/icons/payment_methods/paypal.png";
+  static const String paypal = "assets/images/payment_methods/paypal.png";
   static const String visa = "assets/icons/payment_methods/visa.png";
   static const String paystack = "assets/icons/payment_methods/paystack.png";
   static const String paytm = "assets/icons/payment_methods/paytm.png";
-  static const String successfulPaymentIcon = "assets/icons/payment_methods/successful_payment_icon.png";
+  static const String successfulPaymentIcon = "assets/images/payment_methods/successful_payment_icon.png";
 }
 

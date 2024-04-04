@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Custom Class for white & black Text Themes
 class TTextTheme {
-  TTextTheme._(); // To avoid creating instances
+   // To avoid creating instances
 
   /// Customizable white Text Theme
   static TextTheme whiteTextTheme = TextTheme(

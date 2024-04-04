@@ -12,7 +12,7 @@ class Profile extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             radius: 70,
             backgroundImage: AssetImage(
               'images/avatar.png'),

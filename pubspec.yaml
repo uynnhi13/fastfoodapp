@@ -34,4 +34,6 @@ flutter:
   assets:
     - assets/images/reviews/
     - images/
+    - assets/images/products/
+    - assets/images/payment_methods/
   
