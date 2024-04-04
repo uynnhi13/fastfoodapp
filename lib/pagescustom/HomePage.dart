@@ -4,15 +4,15 @@ import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/pagescustom/CartPage.dart';
 import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
-
 import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
-
 
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
 import 'package:fastfoodapp/widgetscustom/ItemsWidget.dart';
 import 'package:fastfoodapp/widgetscustom/BannerWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -33,9 +33,9 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  _loadWidget(int index){
-    var nameWidgets="Home";
-    switch(index){
+  _loadWidget(int index) {
+    var nameWidgets;
+    switch (index) {
       case 0:
         break;
       case 1:
@@ -65,9 +65,10 @@ class _HomePageState extends State<HomePage> {
         return const Profile();
       }
       default:
-        nameWidgets="None";
+        nameWidgets = "None";
         break;
     }
+
    }
   @override
   Widget build(BuildContext context) {
@@ -77,8 +78,8 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
         backgroundColor: color_background,
-        title: Padding(
-          padding: const EdgeInsets.all(25.0),
+        title: const Padding(
+          padding: EdgeInsets.all(25.0),
           child: Text(
             _appBarTitle,
             style:const TextStyle(
@@ -87,7 +88,7 @@ class _HomePageState extends State<HomePage> {
               fontSize: 18,
             ),
           ),
-          ),
+        ),
       ),
 
       body:ListView(children: [
@@ -186,14 +187,26 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         height: 70,
         color: color_background,
-        items: [
-          Icon(Icons.home,size: 30, color:Colors.white,
+        items: const [
+          Icon(
+            Icons.home,
+            size: 30,
+            color: Colors.white,
           ),
-          Icon(CupertinoIcons.list_bullet,size: 30, color:Colors.white,
+          Icon(
+            CupertinoIcons.list_bullet,
+            size: 30,
+            color: Colors.white,
           ),
-          Icon(CupertinoIcons.cart_fill,size: 30, color:Colors.white,
+          Icon(
+            CupertinoIcons.cart_fill,
+            size: 30,
+            color: Colors.white,
           ),
-          Icon(Icons.person,size: 30, color:Colors.white,
+          Icon(
+            Icons.person,
+            size: 30,
+            color: Colors.white,
           ),
         ],
         onTap: _onItemTapped,
@@ -201,4 +214,9 @@ class _HomePageState extends State<HomePage> {
       body: _loadWidget(_selectedIndex),
     );
   }
+}
+
+class Navigation extends GetxController {
+  final Rx<int> _selectedIndex = 0.obs;
+  final screen = [Orders(), Cart()];
 }

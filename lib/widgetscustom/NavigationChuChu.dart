@@ -27,7 +27,7 @@ class NavigationBar extends StatelessWidget {
         backgroundColor: Colors.transparent,
         height: 70,
         color: color_background,
-        items: [
+        items: const [
           Icon(Icons.home,size: 30, color:Colors.white,
           ),
           Icon(CupertinoIcons.list_bullet,size: 30, color:Colors.white,

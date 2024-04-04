@@ -11,4 +11,5 @@
 void RegisterPlugins(flutter::PluginRegistry* registry) {
   RivePluginRegisterWithRegistrar(
       registry->GetRegistrarForPlugin("RivePlugin"));
+
 }
