@@ -83,29 +83,7 @@ class ItemsWidget extends StatelessWidget {
             ],
           ),
         ),
-        Padding(padding: EdgeInsets.symmetric(vertical: 10),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('\$8',
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 155, 19, 32),
-              ),
-            ),
-            Icon(Icons.shopping_cart,
-             color: Color.fromARGB(255, 155, 19, 32),),
-           
-            
-          ],
-
-        ),
-        )
-        
       ],
-     
-
     );
   }
 }
