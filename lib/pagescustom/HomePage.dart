@@ -1,5 +1,6 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pages/ProductList.dart';
 
 import 'package:fastfoodapp/pagescustom/Home.dart';
 import 'package:fastfoodapp/pagescustom/Menu.dart';
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return const Home();
       case 1:
-        return const Menu();
+        return const ProductList();
       case 2:
         return const Cart();
       case 3:

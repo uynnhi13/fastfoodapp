@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart'; // Để sử dụng ByteData
-
 class Product {
   String? productID;
   String? productName;
@@ -19,7 +18,7 @@ class Product {
     this.productStatus,
     this.img,
   });
-  
+
   // Factory constructor to create a Product object from a Map
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
@@ -46,5 +45,40 @@ class Product {
       // Similarly, you may need to convert ByteData to storable data (e.g., List<int>)
       // Example: 'img': img?.buffer.asUint8List(),
     };
+  }
+
+  // Method to set product ID
+  void setProductID(String id) {
+    this.productID = id;
+  }
+
+  // Method to set product name
+  void setProductName(String name) {
+    this.productName = name;
+  }
+
+  // Method to set product price
+  void setProductPrice(int price) {
+    this.productPrice = price;
+  }
+
+  // Method to set product description
+  void setProductDescription(String description) {
+    this.productDescription = description;
+  }
+
+  // Method to set product category
+  void setProductCategory(int category) {
+    this.productCategory = category;
+  }
+
+  // Method to set product status
+  void setProductStatus(String status) {
+    this.productStatus = status;
+  }
+
+  // Method to set product image
+  void setProductImage(ByteData image) {
+    this.img = image;
   }
 }
