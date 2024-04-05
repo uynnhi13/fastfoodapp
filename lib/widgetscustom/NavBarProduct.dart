@@ -149,7 +149,7 @@ class _ItemBottomNavBarProductState extends State<ItemBottomNavBarProduct> {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
                 ),
-                primary: Color.fromRGBO(242, 213, 211, 0.5),
+                backgroundColor: Color.fromRGBO(242, 213, 211, 0.5),
               ),
               child: const Text('Thêm vào giỏ hàng', style: TextStyle(color: Colors.white),)
             ),
