@@ -1,8 +1,8 @@
 import 'package:fastfoodapp/actions/hidenstatusbar.dart';
-import 'package:fastfoodapp/pagescustom/Profile.dart';
+import 'package:fastfoodapp/pagescustom/Profile/Profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'pagescustom/HomePage.dart';
+import 'pagescustom/WelcomePage.dart';
 
 
 void main() async {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        "/":(context)=>HomePage(),
+        "/":(context)=>WelcomePage(),
       },
 
     );

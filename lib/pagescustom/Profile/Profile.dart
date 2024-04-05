@@ -1,6 +1,9 @@
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pagescustom/ContactPage.dart';
+import 'package:fastfoodapp/pagescustom/InforPage.dart';
 import 'package:fastfoodapp/pagescustom/Product1.dart';
-import 'package:fastfoodapp/pagescustom/profile-edit.dart';
+import 'package:fastfoodapp/pagescustom/Profile/profile-edit.dart';
+import 'package:fastfoodapp/pagescustom/login.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +20,7 @@ class Profile extends StatelessWidget {
           const CircleAvatar(
             radius: 70,
             backgroundImage: AssetImage(
-              'images/avatar.png'),
+              'assets/images/avatar/avatar.png'),
           ),
           const SizedBox(height: 10,),
           Text("Uyển Nhi Lê",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
@@ -55,17 +58,17 @@ class Profile extends StatelessWidget {
               );
             },),
           const SizedBox(height: 10),
-          itemProfile('Address', CupertinoIcons.location,(){
+          itemProfile('Về Chúng Tôi', CupertinoIcons.info,(){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Product1()),
+                MaterialPageRoute(builder: (context) => InforPage()),
               );
             },),
           const SizedBox(height: 10),
           itemProfile('Đăng xuất', Icons.logout,(){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Product1()),
+                MaterialPageRoute(builder: (context) => Login()),
               );
             },),
         ],
