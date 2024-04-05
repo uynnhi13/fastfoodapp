@@ -9,6 +9,7 @@ const Color color_5 = Color.fromARGB(255, 198, 198, 198);
 const Color primarys = Color(0xFFCFD5F3);
 
 const Color color_background = Color(0xFFC21010);
+const Color background = Color.fromARGB(255, 237, 237, 237);
 TextStyle UNtextstyle(double size) {
   return TextStyle(
     color: color_background,
