@@ -21,10 +21,7 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.only(top: 15),
           decoration: BoxDecoration(
             color: Color(0xFFEDECF2),
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(35),
-              topRight: Radius.circular(35),
-            )
+            
           ),
           child: Column(children: [
             Container(

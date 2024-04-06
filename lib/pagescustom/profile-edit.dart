@@ -95,7 +95,7 @@ class _ProfileEditState extends State<ProfileEdit> {
                       padding: const EdgeInsets.all(15),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      primary: color_background,
+                      backgroundColor: color_background,
                     ),
                     child: const Text(
                       'Lưu thông tin',

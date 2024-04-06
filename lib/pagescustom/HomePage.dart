@@ -1,19 +1,15 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
 
-import 'package:fastfoodapp/pagescustom/CartPage.dart';
 import 'package:fastfoodapp/pagescustom/Home.dart';
 import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
-import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
 
-import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
-import 'package:fastfoodapp/widgetscustom/ItemsWidget.dart';
-import 'package:fastfoodapp/widgetscustom/BannerWidget.dart';
+import 'package:fastfoodapp/pagescustom/cart/cart.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -42,7 +38,7 @@ class _HomePageState extends State<HomePage> {
       case 1:
         return const Menu();
       case 2:
-        return const CartPage();
+        return const Cart();
       case 3:
         return const Profile();
       default:
@@ -60,7 +56,7 @@ class _HomePageState extends State<HomePage> {
         return const Menu();
       case 2:
       _appBarTitle="Giỏ Hàng";
-        return const CartPage();
+        return const Profile();
       case 3:{
         _appBarTitle="Tài Khoản";
         return const Profile();
@@ -79,7 +75,7 @@ class _HomePageState extends State<HomePage> {
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
         backgroundColor: color_background,
-        title: const Padding(
+        title: Padding(
           padding: EdgeInsets.all(25.0),
           child: Text(
             _appBarTitle,
@@ -125,7 +121,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class Navigation extends GetxController {
-  final Rx<int> _selectedIndex = 0.obs;
-  final screen = [Orders(), Cart()];
-}
+// class Navigation extends GetxController {
+//   final Rx<int> _selectedIndex = 0.obs;
+//   final screen = [Orders(), Cart()];
+// }
