@@ -3,8 +3,8 @@ import 'package:fastfoodapp/pagescustom/cart/cartwidget/card_item_adrm.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/cart_item.dart';
 import 'package:flutter/material.dart';
 
-class CartItems extends StatelessWidget {
-  const CartItems({super.key, this.showAddRemoveButtons = true});
+class CartItemsO extends StatelessWidget {
+  const CartItemsO({super.key, this.showAddRemoveButtons = true});
 
   final showAddRemoveButtons;
   @override
@@ -12,7 +12,7 @@ class CartItems extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       separatorBuilder: (_, __) => SizedBox(height: TSizes.spaceBtwSections),
-      itemCount: 6,
+      itemCount: 2,
       itemBuilder: (_, index) => Column(
         children: [
           const CartItem(),

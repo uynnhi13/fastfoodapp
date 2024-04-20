@@ -2,8 +2,10 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
 import 'package:fastfoodapp/pagescustom/cart/cart.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/success_payment.dart';
-import 'package:fastfoodapp/pagescustom/cart/order_cart.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/success_payment.dart';
+import 'package:fastfoodapp/pagescustom/payment/order_cart.dart';
+import 'package:fastfoodapp/pagescustom/orders_history/order_his.dart';
+import 'package:fastfoodapp/pagescustom/orders_history/order_his_widget/order_list_his.dart';
 import 'package:fastfoodapp/pagescustom/product_review/review.dart';
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
 import 'package:flutter/cupertino.dart';
@@ -30,16 +32,19 @@ class _HomePageState extends State<HomePage> {
     var nameWidgets;
     switch (index) {
       case 0:
+       {
+          return const OrderListItemHis();
+        }
         nameWidgets = "Home";
         break;
       case 1:
         {
-          return const Cart();
+          return const ProductReview();
         }
         nameWidgets = "Menu";
       case 2:
         {
-          return const ProductReview();
+          return const Orders();
         }
         nameWidgets = "Cart";
       case 3:

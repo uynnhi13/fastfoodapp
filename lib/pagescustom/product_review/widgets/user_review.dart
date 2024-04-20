@@ -53,11 +53,9 @@ class UserReviews extends StatelessWidget {
             trimCollapsedText: 'show more',
             moreStyle: TextStyle(
                 fontSize: 14.0,
-                fontWeight: FontWeight.bold,
                 color: Colors.black),
             lessStyle: TextStyle(
                 fontSize: 14.0,
-                fontWeight: FontWeight.bold,
                 color: Colors.black)),
         const SizedBox(height: TSizes.spaceBtwItems),
         ContainerN(
@@ -68,9 +66,11 @@ class UserReviews extends StatelessWidget {
                 child: Column(
                   children: [
                     Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text("Chu Chu",
                             style: TTextTheme.whiteTextTheme.bodyLarge),
+                       
                         Text("24/07/2024",
                             style: TTextTheme.whiteTextTheme.bodyMedium),
                       ],
@@ -84,15 +84,17 @@ class UserReviews extends StatelessWidget {
                         trimCollapsedText: ' show more',
                         moreStyle: TextStyle(
                             fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
+                         
                             color: Colors.black),
                         lessStyle: TextStyle(
                             fontSize: 14.0,
-                            fontWeight: FontWeight.bold,
+                         
                             color: Colors.black)),
                   ],
-                )))
-                 ,const SizedBox(width: TSizes.spaceBtwSections),
+                )
+                )
+                )
+                 ,const SizedBox(height: TSizes.spaceBtwSections),
       ],
     );
   }

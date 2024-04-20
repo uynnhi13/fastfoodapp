@@ -6,6 +6,8 @@ class TSizes {
   static const double md = 16.0;
   static const double lg = 24.0;
   static const double xl = 32.0;
+  static const double xxl = 64.0;
+
 
   // Icon sizes
   static const double iconXs = 12.0;
@@ -34,6 +36,8 @@ class TSizes {
   static const double defaultSpace = 24.0;
   static const double spaceBtwItems = 16.0;
   static const double spaceBtwSections = 32.0;
+    static const double spaceBtwHuge = 64.0;
+
 
   // Border radius
   static const double borderRadiusSm = 4.0;

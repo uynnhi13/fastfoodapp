@@ -1,21 +1,23 @@
 import 'package:fastfoodapp/config/image_strings.dart';
 import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/const.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/adresss.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/bill.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/adresss.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/bill.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/cart_items.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/coupon.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/payment.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/success_payment.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/cart_items_o.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/coupon.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/payment.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/success_payment.dart';
+import 'package:fastfoodapp/pagescustom/product_review/review.dart';
 import 'package:fastfoodapp/pagescustom/product_review/widgets/container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
 
 class Orders extends StatelessWidget {
   const Orders({
     super.key,
   });
- 
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +27,7 @@ class Orders extends StatelessWidget {
           padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
             children: [
-              CartItems(
+              CartItemsO(
                 showAddRemoveButtons: false,
               ),
               SizedBox(
@@ -52,7 +54,6 @@ class Orders extends StatelessWidget {
                         height: TSizes.spaceBtwItems,
                       ),
                       Billing(),
-                      
                     ],
                   )),
             ],
@@ -62,13 +63,15 @@ class Orders extends StatelessWidget {
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(
-          onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder:
-                (context)=>PaymentSuccess(
-                subTitle: 'vui lòng kiểm tra ví ',
-                onPressed: () {},
-                title: 'Thanh toán thành công ',
-              )),);
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const PaymentSuccess(
+                        title: 'Thanh toán thành công ',
+                        subTitle: 'Vui lòng kiểm tra ví ',
+                      )),
+            );
           },
           style: ElevatedButton.styleFrom(backgroundColor: color_background),
           child: const Text(

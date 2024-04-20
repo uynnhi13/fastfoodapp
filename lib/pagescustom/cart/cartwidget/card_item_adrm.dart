@@ -1,7 +1,7 @@
 
 import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/const.dart';
-import 'package:fastfoodapp/pagescustom/cart/cartwidget/circularicon.dart';
+import 'package:fastfoodapp/pagescustom/payment/payment_wiget/circularicon.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -43,6 +43,8 @@ class CardItemAddRemove extends StatelessWidget {
               color: color_3,
               backgroundColor: color_4,
             ),
+
+            
           ],
         );
   }
