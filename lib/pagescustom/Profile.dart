@@ -1,4 +1,6 @@
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pagescustom/Product1.dart';
+import 'package:fastfoodapp/pagescustom/profile-edit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,28 +19,55 @@ class Profile extends StatelessWidget {
             backgroundImage: AssetImage(
               'images/avatar.png'),
           ),
-          const SizedBox(height: 20),
-          itemProfile('Name', 'Lê Uyển Nhi', Icons.person),
-          const SizedBox(height: 10),
-          itemProfile('Phone', '0984010302', Icons.phone),
-          const SizedBox(height: 10),
-          itemProfile('Address', 'abc Sư Vạn Hạnh Quận 10', CupertinoIcons.location),
-          const SizedBox(height: 10),
-          itemProfile('Email', 'leuyennhi132002@gmail.com', CupertinoIcons.mail),
+          const SizedBox(height: 10,),
+          Text("Uyển Nhi Lê",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
           const SizedBox(height: 20),
           SizedBox(
-            width: double.infinity,
+            width: 200,
             child: ElevatedButton(
-              onPressed: (){}, 
+              onPressed: (){
+                Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfileEdit()),
+              );
+              }, 
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(15), backgroundColor: color_background,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
+                  borderRadius: BorderRadius.circular(50)
                 ),
               ),
               child: const Text('Edit Profile', style: TextStyle(color: Colors.white),)
             ),
           ),
+          const SizedBox(height: 20),
+          itemProfile('Cài đặt',  Icons.settings,(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Product1()),
+              );
+            },),
+          const SizedBox(height: 10),
+          itemProfile('Lịch sử đơn hàng', Icons.wallet,(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Product1()),
+              );
+            },),
+          const SizedBox(height: 10),
+          itemProfile('Address', CupertinoIcons.location,(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Product1()),
+              );
+            },),
+          const SizedBox(height: 10),
+          itemProfile('Đăng xuất', Icons.logout,(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Product1()),
+              );
+            },),
         ],
       ),
       )
@@ -46,8 +75,8 @@ class Profile extends StatelessWidget {
     );
   }
 }
-
-itemProfile(String title, String subtitle, IconData iconData){
+typedef void OnIconPressed();
+itemProfile(String title, IconData iconData, OnIconPressed onIconPressed){
     return Container(
             decoration: BoxDecoration(
               color: Colors.white,
@@ -63,9 +92,10 @@ itemProfile(String title, String subtitle, IconData iconData){
             ),
             child: ListTile(
               title: Text(title),
-              subtitle: Text(subtitle),
               leading: Icon(iconData),
-              trailing: Icon(Icons.arrow_forward,color: Colors.grey),
+              trailing: IconButton(
+                icon: Icon(Icons.arrow_forward, color: Colors.grey),
+                onPressed: onIconPressed,),
               tileColor: Colors.white,
             ),
           );
