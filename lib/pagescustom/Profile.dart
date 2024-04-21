@@ -51,21 +51,21 @@ class Profile extends StatelessWidget {
           itemProfile('Lịch sử đơn hàng', Icons.wallet,(){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Product1()),
+                // MaterialPageRoute(builder: (context) => Product1()),
               );
             },),
           const SizedBox(height: 10),
           itemProfile('Address', CupertinoIcons.location,(){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Product1()),
+                // MaterialPageRoute(builder: (context) => Product1()),
               );
             },),
           const SizedBox(height: 10),
           itemProfile('Đăng xuất', Icons.logout,(){
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Product1()),
+                // MaterialPageRoute(builder: (context) => Product1()),
               );
             },),
         ],

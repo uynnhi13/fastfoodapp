@@ -1,4 +1,3 @@
-import 'package:clippy_flutter/clippy_flutter.dart';
 import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/widgetscustom/ItemAppBar.dart';
 import 'package:fastfoodapp/widgetscustom/NavBarProduct.dart';

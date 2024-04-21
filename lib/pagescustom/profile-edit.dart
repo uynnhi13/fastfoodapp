@@ -92,10 +92,9 @@ class _ProfileEditState extends State<ProfileEdit> {
                       Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15), backgroundColor: color_background,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50)),
-                      primary: color_background,
                     ),
                     child: const Text(
                       'Lưu thông tin',
