@@ -14,6 +14,7 @@ class CardItemAddRemove extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Row(
            mainAxisSize: MainAxisSize.min,
+
           children: [
             CircularIcon(
               icon: Iconsax.minus,
@@ -24,15 +25,16 @@ class CardItemAddRemove extends StatelessWidget {
               backgroundColor: color_1,
             ),
             SizedBox(
-              width: TSizes.spaceBtwItems,
+              width: 5,
             ),
             Text('2',
                 style: TextStyle(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w600,
                     color: Colors.black)),
+
             SizedBox(
-              width: TSizes.spaceBtwItems,
+              width: 5,
             ),
            
             CircularIcon(

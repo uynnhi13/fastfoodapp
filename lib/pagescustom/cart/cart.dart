@@ -3,7 +3,6 @@ import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/cart_items.dart';
 import 'package:fastfoodapp/pagescustom/cart/order_cart.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class Cart extends StatelessWidget {
   const Cart({super.key});
@@ -12,7 +11,7 @@ class Cart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: const Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace), child: CartItems()),
+          padding: EdgeInsets.all(TSizes.defaultSpace), child: CartItems(showAddRemoveButtons: true)),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),
         child: ElevatedButton(

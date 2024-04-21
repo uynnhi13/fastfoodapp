@@ -109,7 +109,7 @@ Widget ItemProduct(BuildContext context,Product model) {
           padding: const EdgeInsets.only(bottom: 8),
           alignment: Alignment.centerLeft,
           child: Text(
-            model.productName ?? '',
+            model.productName ?? 'asdasdasdasdasdasdasdasd',
             style:const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,

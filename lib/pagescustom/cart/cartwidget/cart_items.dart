@@ -7,6 +7,7 @@ class CartItems extends StatelessWidget {
   const CartItems({super.key, this.showAddRemoveButtons = true});
 
   final showAddRemoveButtons;
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
