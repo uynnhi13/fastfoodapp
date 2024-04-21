@@ -23,14 +23,6 @@ dependencies:
   iconsax: ^0.0.8
   readmore: ^2.2.0
 
-  # thư viện cho phần ở details product
-  clippy_flutter: ^2.0.0-nullsafety.1
-  # Thư viện icon đánh giá
-  flutterflow_ui: ^0.2.0+1
-
-  
-
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
