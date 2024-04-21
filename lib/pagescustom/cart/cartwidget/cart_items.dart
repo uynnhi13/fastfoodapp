@@ -12,7 +12,7 @@ class CartItems extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       separatorBuilder: (_, __) => SizedBox(height: TSizes.spaceBtwSections),
-      itemCount: 6,
+      itemCount: 2,
       itemBuilder: (_, index) => Column(
         children: [
           const CartItem(),

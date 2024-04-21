@@ -33,11 +33,10 @@ class ProductReview extends StatelessWidget {
               //
               const UserReviews(),
               const UserReviews(),
-                   const UserReviews(),
-                        const UserReviews(),
-                             const UserReviews(),
-                                  const UserReviews(),
-              
+              const UserReviews(),
+              const UserReviews(),
+              const UserReviews(),
+              const UserReviews(),
             ],
           ),
         ),

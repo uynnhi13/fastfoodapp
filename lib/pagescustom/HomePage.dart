@@ -4,10 +4,8 @@ import 'package:fastfoodapp/pagescustom/CartPage.dart';
 import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
 import 'package:fastfoodapp/pagescustom/cart/cart.dart';
-import 'package:fastfoodapp/pagescustom/payment/payment_wiget/success_payment.dart';
-import 'package:fastfoodapp/pagescustom/payment/order_cart.dart';
-import 'package:fastfoodapp/pagescustom/orders_history/order_his.dart';
-import 'package:fastfoodapp/pagescustom/orders_history/order_his_widget/order_list_his.dart';
+import 'package:fastfoodapp/pagescustom/cart/cartwidget/success_payment.dart';
+import 'package:fastfoodapp/pagescustom/cart/order_cart.dart';
 import 'package:fastfoodapp/pagescustom/product_review/review.dart';
 import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
@@ -41,19 +39,16 @@ class _HomePageState extends State<HomePage> {
     var nameWidgets;
     switch (index) {
       case 0:
-       {
-          return const OrderListItemHis();
-        }
         nameWidgets = "Home";
         break;
       case 1:
         {
-          return const ProductReview();
+          return const Cart();
         }
         nameWidgets = "Menu";
       case 2:
         {
-          return const Orders();
+          return const ProductReview();
         }
         nameWidgets = "Cart";
       case 3:
