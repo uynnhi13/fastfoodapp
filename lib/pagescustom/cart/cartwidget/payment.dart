@@ -2,14 +2,17 @@ import 'package:fastfoodapp/config/image_strings.dart';
 import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/config/text_them.dart';
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pagescustom/cart/cartwidget/paymentmethod.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/section_heading.dart';
 import 'package:fastfoodapp/pagescustom/product_review/widgets/container.dart';
 import 'package:flutter/material.dart';
 
 class Payment extends StatelessWidget {
+  
   const Payment({
-    super.key,
+    super.key, 
   });
+
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,12 @@ class Payment extends StatelessWidget {
          SectionHeading(
           title: 'Phương thức thanh toán',
           buttonTitle: 'Thay đổi',
-          onPressed: (){},
+          onPressed: (){
+            showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return PaymentMethodPage();});
+          },
         ),
         const SizedBox(
           height: TSizes.spaceBtwItems / 2,

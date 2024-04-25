@@ -1,5 +1,6 @@
 import 'package:fastfoodapp/actions/hidenstatusbar.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
+import 'package:fastfoodapp/pagescustom/cart/cartwidget/payment.dart';
 import 'package:fastfoodapp/pagescustom/login.dart';
 import 'package:fastfoodapp/pagescustom/register.dart';
 import 'package:fastfoodapp/pagescustom/startpage.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        "/":(context)=> StartPage(),
+        "/":(context)=> HomePage(),
       },
 
     );
