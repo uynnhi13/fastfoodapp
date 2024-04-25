@@ -22,7 +22,7 @@ dependencies:
   get_storage: ^2.1.1
   iconsax: ^0.0.8
   readmore: ^2.2.0
-
+  introduction_screen: ^3.1.14
   # thư viện cho phần ở details product
   clippy_flutter: ^2.0.0-nullsafety.1
   # Thư viện icon đánh giá
@@ -51,5 +51,6 @@ flutter:
   - assets/foods/Category/
   - assets/foods/Bestsell/
   - assets/banner/
+  - assets/startpage/
   
 
