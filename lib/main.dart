@@ -1,7 +1,7 @@
 import 'package:fastfoodapp/actions/hidenstatusbar.dart';
+import 'package:fastfoodapp/pages/notification/notificationwidget.dart';
 import 'package:flutter/material.dart';
 import 'pagescustom/WelcomePage.dart';
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,10 +20,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
+      // routes: {
+      //   "/":(context)=>WelcomePage(),
+      // },
       routes: {
-        "/":(context)=>WelcomePage(),
+        "/": (context) => WelcomePage(),
       },
-
     );
   }
 }

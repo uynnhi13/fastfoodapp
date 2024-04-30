@@ -1,4 +1,5 @@
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pages/notification/notificationwidget.dart';
 import 'package:fastfoodapp/pagescustom/ContactPage.dart';
 import 'package:fastfoodapp/pagescustom/InforPage.dart';
 import 'package:fastfoodapp/pagescustom/Product1.dart';
@@ -48,6 +49,13 @@ class Profile extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Product1()),
+              );
+            },),
+          const SizedBox(height: 10),
+          itemProfile('Thông báo', Icons.notifications,(){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NotificationWidget()),
               );
             },),
           const SizedBox(height: 10),

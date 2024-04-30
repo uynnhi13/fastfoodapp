@@ -32,70 +32,70 @@ class _ProductListState extends State<ProductList> {
             ),
             child: Column(
               children: [
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 15),
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                          margin: const EdgeInsets.only(left: 5),
-                          height: 50,
-                          width: 300,
-                          child: TextFormField(
-                            decoration: const InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Search here ...",
-                            ),
-                          )),
-                      const Icon(
-                        Icons.search,
-                        size: 27,
-                        color: color_background,
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(
-                    vertical: 20,
-                    horizontal: 20,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        alignment: Alignment.centerLeft,
-                        child: const Text(
-                          'Category',
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: color_background),
-                        ),
-                      ),
-                      // const Spacer(),
-                      // const Icon(Icons.more_vert)
+                // Container(
+                //   margin: const EdgeInsets.symmetric(horizontal: 15),
+                //   padding: const EdgeInsets.symmetric(horizontal: 15),
+                //   height: 50,
+                //   decoration: BoxDecoration(
+                //     color: Colors.white,
+                //     borderRadius: BorderRadius.circular(30),
+                //   ),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                //     children: [
+                //       Container(
+                //           margin: const EdgeInsets.only(left: 5),
+                //           height: 50,
+                //           width: 300,
+                //           child: TextFormField(
+                //             decoration: const InputDecoration(
+                //               border: InputBorder.none,
+                //               hintText: "Search here ...",
+                //             ),
+                //           )),
+                //       const Icon(
+                //         Icons.search,
+                //         size: 27,
+                //         color: color_background,
+                //       ),
+                //     ],
+                //   ),
+                // ),
+                // Container(
+                //   margin: const EdgeInsets.symmetric(
+                //     vertical: 20,
+                //     horizontal: 20,
+                //   ),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.start,
+                //     crossAxisAlignment: CrossAxisAlignment.center,
+                //     children: [
+                //       Container(
+                //         alignment: Alignment.centerLeft,
+                //         child: const Text(
+                //           'Category',
+                //           style: TextStyle(
+                //               fontSize: 20,
+                //               fontWeight: FontWeight.bold,
+                //               color: color_background),
+                //         ),
+                //       ),
+                //       // const Spacer(),
+                //       // const Icon(Icons.more_vert)
 
-                      GestureDetector(
-                        // When the child is tapped, show a snackbar.
-                        onTap: () {
-                          const snackBar = SnackBar(content: Text('Tap'));
+                //       GestureDetector(
+                //         // When the child is tapped, show a snackbar.
+                //         onTap: () {
+                //           const snackBar = SnackBar(content: Text('Tap'));
 
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                        },
-                        // The custom button
-                        child: const Icon(Icons.more_vert),
-                      )
-                    ],
-                  ),
-                ),
+                //           ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                //         },
+                //         // The custom button
+                //         child: const Icon(Icons.more_vert),
+                //       )
+                //     ],
+                //   ),
+                // ),
 
                 CategoriesWidget(),
 
