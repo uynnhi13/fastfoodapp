@@ -25,20 +25,20 @@ class _IntroScreen extends State<StartPage>{
     PageDecoration pageDecoration = const PageDecoration(
           titleTextStyle: TextStyle(fontSize: 28.0, 
                     fontWeight: FontWeight.w700, 
-                    color:Colors.white 
+                    color:Color(0xFFC21010)
                   ), //tile font size, weight and color
-          bodyTextStyle:TextStyle(fontSize: 19.0, color:Colors.white), 
+          bodyTextStyle:TextStyle(fontSize: 19.0, color:Colors.black), 
           //body text size and color
           //descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
           //decription padding
-          imagePadding: EdgeInsets.all(70), //image padding
+          imagePadding: EdgeInsets.all(10), //image padding
           boxDecoration:BoxDecoration(
-              color: Color(0xFFC21010),
+              color: Colors.white,
           ), //show linear gradient background of page  
     );
     
     return IntroductionScreen(
-          globalBackgroundColor: Colors.amber,
+          globalBackgroundColor:  Color(0xFFC21010),
           //main background of screen
           
           pages: [ //set your page view here
@@ -46,20 +46,20 @@ class _IntroScreen extends State<StartPage>{
             PageViewModel(
               title: "Nhận giao đồ ăn của bạn với chúng tôi",
               body: "Với ứng dụng của chúng tôi, bạn sẽ trải nghiệm sự tiện lợi và nhanh chóng khi đặt món ăn yêu thích của mình!",
-              image: introImage('assets/startpage/intro_slide1.png', 450.0, 400.0),
+              image: introImage('assets/startpage/intro_slide1.png', 80),
               decoration: pageDecoration,
           
             ),
             PageViewModel(
               title: "Nhận đồ ăn giao nhanh hơn!",
               body: "Bạn sẽ không chỉ nhận được đồ ăn nhanh chóng mà còn có được sự đa dạng và chất lượng",
-              image: introImage('assets/startpage/intro_slide2.png',350.0, 200.0),
+              image: introImage('assets/startpage/intro_slide2.png',80),
               decoration: pageDecoration,
             ),
             PageViewModel(
               title: "Đặt đồ ăn nhanh của bạn với chúng tôi!",
               body: "Việc đặt đồ ăn sẽ trở nên dễ dàng và tiện lợi hơn bao giờ hết, đảm bảo bạn luôn có trải nghiệm tuyệt vời mỗi khi đói bụng",
-              image: introImage('assets/startpage/intro_slide3.png',450.0, 300.0),
+              image: introImage('assets/startpage/intro_slide3.png',80),
               decoration: pageDecoration,
 
               
@@ -101,11 +101,10 @@ class _IntroScreen extends State<StartPage>{
     //so that "Back" button wont work.
   }
 
-  Widget introImage(String assetName, double width, double height) {
-   //widget to show intro image
-  return Align(
-    child: Image.asset('$assetName', width: width, height: height),
-    alignment: Alignment.bottomCenter,
+  Widget introImage(String assetName, double marginTop) {
+    return Padding(
+      padding: EdgeInsets.only(top: marginTop), // Đặt khoảng cách từ trên xuống
+      child: Image.asset('$assetName', fit: BoxFit.cover),
     );
   }
 }
