@@ -37,3 +37,24 @@ TextStyle UNtextstyle(double size) {
           )),
     );
   }
+
+//Khung nhập dữ liệu input
+  TextFormField textInput(String label, TextEditingController Tcontroller) {
+    return TextFormField(
+      controller: Tcontroller,
+      decoration: InputDecoration(
+          label: Text(label),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(15)),
+          floatingLabelStyle: TextStyle(
+            color: color_background,
+          ),
+          floatingLabelBehavior: FloatingLabelBehavior.auto,
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              width: 2,
+              color: color_background,
+            ),
+            borderRadius: BorderRadius.circular(15),
+          )),
+    );
+  }
