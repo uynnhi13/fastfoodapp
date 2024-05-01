@@ -18,7 +18,9 @@ class _IntroScreen extends State<StartPage>{
 
   @override
   Widget build(BuildContext context) {
-
+    const SizedBox(
+                height: 100,
+              );
     //this is a page decoration for intro screen
     PageDecoration pageDecoration = const PageDecoration(
           titleTextStyle: TextStyle(fontSize: 28.0, 
@@ -31,37 +33,41 @@ class _IntroScreen extends State<StartPage>{
           //decription padding
           imagePadding: EdgeInsets.all(70), //image padding
           boxDecoration:BoxDecoration(
-              color: Colors.amber
+              color: Color(0xFFC21010),
           ), //show linear gradient background of page  
     );
-
+    
     return IntroductionScreen(
-          globalBackgroundColor: Color.fromARGB(255, 149, 45, 55),
+          globalBackgroundColor: Colors.amber,
           //main background of screen
-          pages: [ //set your page view here
           
+          pages: [ //set your page view here
+            
             PageViewModel(
-              title: "Fractional shares",
-              body: "Instead of having to buy an entire share, invest any amount you want.",
-              image: introImage('assets/startpage/intro_slide1.png', 450.0, 300.0),
+              title: "Nhận giao đồ ăn của bạn với chúng tôi",
+              body: "Với ứng dụng của chúng tôi, bạn sẽ trải nghiệm sự tiện lợi và nhanh chóng khi đặt món ăn yêu thích của mình!",
+              image: introImage('assets/startpage/intro_slide1.png', 450.0, 400.0),
               decoration: pageDecoration,
           
             ),
             PageViewModel(
-              title: "Fractional shares",
-              body: "Instead of having to buy an entire share, invest any amount you want.",
+              title: "Nhận đồ ăn giao nhanh hơn!",
+              body: "Bạn sẽ không chỉ nhận được đồ ăn nhanh chóng mà còn có được sự đa dạng và chất lượng",
               image: introImage('assets/startpage/intro_slide2.png',350.0, 200.0),
               decoration: pageDecoration,
             ),
             PageViewModel(
-              title: "Fractional shares",
-              body: "Instead of having to buy an entire share, invest any amount you want.",
-              image: introImage('assets/startpage/intro_slide3.png',350.0, 200.0),
+              title: "Đặt đồ ăn nhanh của bạn với chúng tôi!",
+              body: "Việc đặt đồ ăn sẽ trở nên dễ dàng và tiện lợi hơn bao giờ hết, đảm bảo bạn luôn có trải nghiệm tuyệt vời mỗi khi đói bụng",
+              image: introImage('assets/startpage/intro_slide3.png',450.0, 300.0),
               decoration: pageDecoration,
+
+              
             ),
 
             //add more screen here
           ],
+          
 
           onDone: () => goHomepage(context), //go to home page on done
           onSkip: () => goHomepage(context), // You can override on skip 

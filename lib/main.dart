@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        "/":(context)=> HomePage(),
+        "/":(context)=> StartPage(),
       },
 
     );
