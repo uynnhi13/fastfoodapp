@@ -39,7 +39,7 @@ class CartItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
-              padding: EdgeInsets.all(30.0),
+              padding: EdgeInsets.all(10.0),
               child: PriceItem(
                 price: ' 200.000',
               ),

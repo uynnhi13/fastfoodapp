@@ -1,14 +1,15 @@
 import 'package:fastfoodapp/const.dart';
 import 'package:flutter/material.dart';
 
-class ItemAppBar extends StatelessWidget implements PreferredSizeWidget {
+class AppBarAd extends StatelessWidget implements PreferredSizeWidget {
   final String title;
-  const ItemAppBar({Key? key, required this.title}) : super(key: key);
+
+  const AppBarAd({Key? key, required this.title}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: color_background,
+      backgroundColor: color_background, // Thay thế bằng màu nền mong muốn
       toolbarHeight: 70,
       leading: IconButton(
         onPressed: () => Navigator.pop(context),
@@ -21,8 +22,9 @@ class ItemAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: TextStyle(color: Colors.white, fontSize: 18),
       ),
-      );
+    );
   }
+
   @override
-  Size get preferredSize => Size.fromHeight(70); // tùy chỉnh kích thước app bar chung
+  Size get preferredSize => Size.fromHeight(70);
 }

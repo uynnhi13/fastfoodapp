@@ -145,10 +145,11 @@ class _ItemBottomNavBarProductState extends State<ItemBottomNavBarProduct> {
             child: ElevatedButton(
               onPressed: addToCart, 
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(15), backgroundColor: Color.fromRGBO(242, 213, 211, 0.5),
+                padding: const EdgeInsets.all(15),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
                 ),
+                backgroundColor: Color.fromRGBO(242, 213, 211, 0.5),
               ),
               child: const Text('Thêm vào giỏ hàng', style: TextStyle(color: Colors.white),)
             ),

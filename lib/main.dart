@@ -1,14 +1,9 @@
 import 'package:fastfoodapp/actions/hidenstatusbar.dart';
-import 'package:fastfoodapp/pagescustom/Profile.dart';
-
-
-import 'package:fastfoodapp/pagescustom/ContactPage.dart';
-import 'package:fastfoodapp/pagescustom/InforPage.dart';
-import 'package:fastfoodapp/pagescustom/welcomepage.dart';
-
+import 'package:fastfoodapp/test.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'pagescustom/HomePage.dart';
+import 'pagescustom/WelcomePage.dart';
+import 'pagescustom/login.dart';
 
 
 void main() async {
@@ -24,13 +19,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        "/":(context)=>HomePage(),
+        "/":(context)=>MyHomePage(),
       },
 
     );
