@@ -1,3 +1,4 @@
+
 import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/pagescustom/ContactPage.dart';
 import 'package:fastfoodapp/pagescustom/InforPage.dart';
@@ -9,7 +10,6 @@ import 'package:flutter/material.dart';
 
 class Profile extends StatelessWidget {
   const Profile({Key? key}):super(key:key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +74,6 @@ class Profile extends StatelessWidget {
         ],
       ),
       )
-      
     );
   }
 }

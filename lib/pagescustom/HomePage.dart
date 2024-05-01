@@ -1,13 +1,11 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
-
 import 'package:fastfoodapp/pagescustom/Home.dart';
 import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile/Profile.dart';
 import 'package:fastfoodapp/pagescustom/cart/cart.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/cart_item.dart';
 import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
-
 import 'package:fastfoodapp/widgetscustom/HomeAppBar.dart';
 import 'package:fastfoodapp/widgetscustom/ItemsWidget.dart';
 import 'package:fastfoodapp/widgetscustom/BannerWidget.dart';
@@ -41,11 +39,14 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return const Home();
       case 1:
-        return const Menu();
+        {
+          return const Cart();
+        }
+        nameWidgets = "Menu";
       case 2:
         return const Cart();
       case 3:
-        return const Profile();
+        // return const Profile();
       default:
         nameWidgets="None";
     }
@@ -64,7 +65,7 @@ class _HomePageState extends State<HomePage> {
         return const Profile();
       case 3:{
         _appBarTitle="Tài Khoản";
-        return const Profile();
+        // return const Profile();
       }
       default:
         nameWidgets = "None";
@@ -75,15 +76,14 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: 70,
         backgroundColor: color_background,
         title: Padding(
           padding: EdgeInsets.all(25.0),
-          child: Text(
-            _appBarTitle,
+          child: Text("w"
+            ,
             style:const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.w500,
@@ -121,7 +121,7 @@ class _HomePageState extends State<HomePage> {
         ],
         onTap: _onItemTapped,
       ),
-      body: _loadWidget(_selectedIndex),
+      // body: _loadWidget(_selectedIndex),
     );
   }
 }

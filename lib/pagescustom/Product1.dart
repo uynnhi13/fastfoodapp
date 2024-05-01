@@ -9,7 +9,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class Product1 extends StatelessWidget {
   const Product1({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
