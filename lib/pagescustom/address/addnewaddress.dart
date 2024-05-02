@@ -115,7 +115,7 @@ class addNewAdr extends StatelessWidget {
                         overlayColor: MaterialStateProperty.resolveWith<Color>(
                           (Set<MaterialState> states) {
                             if (states.contains(MaterialState.pressed)) {
-                              return color_5; // Màu khi di chuột qua
+                              return color_7; // Màu khi di chuột qua
                             }
                             return color_background; // Sử dụng màu mặc định
                           },

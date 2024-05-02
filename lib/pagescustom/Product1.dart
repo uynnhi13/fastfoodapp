@@ -15,7 +15,7 @@ class Product1 extends StatelessWidget {
       appBar: ItemAppBar(title: "Gà rán vui vẻ"),
       backgroundColor: Colors.white,
       body: ListView(
-        children: [
+        children: <Widget>[
           Padding(
             padding: EdgeInsets.all(10),
             child: Image.asset(
