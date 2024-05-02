@@ -1,8 +1,16 @@
+import 'package:fastfoodapp/actions/hidenstatusbar.dart';
+import 'package:fastfoodapp/test.dart';
 import 'package:flutter/material.dart';
-import 'pagescustom/HomePage.dart';
+import 'package:flutter/services.dart';
+import 'pagescustom/WelcomePage.dart';
+import 'pagescustom/login.dart';
 
-void main() {
-  runApp(const MyApp());
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await hidenstatusbar();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,8 +24,9 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
       ),
       routes: {
-        "/":(context)=>HomePage(),
+        "/":(context)=>MyHomePage(),
       },
+
     );
   }
 }

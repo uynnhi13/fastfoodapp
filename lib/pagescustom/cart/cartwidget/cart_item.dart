@@ -20,14 +20,14 @@ class CartItem extends StatelessWidget {
           imgUrl: TImages.productImage1,
           width: 60,
           height: 60,
-          padding: EdgeInsets.all(TSizes.md),
+          padding: EdgeInsets.all(TSizes.sm),
         ),
         const SizedBox(width: TSizes.spaceBtwItems),
         Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const BrandIcon(title: 'Gà',),
+            const BrandIcon(title: 'Gà'),
             const Flexible(
               child: ProductTitleText(title: 'Gà chiên giòn ', maxLines: 1),
             ),
@@ -37,10 +37,9 @@ class CartItem extends StatelessWidget {
         ),
         const Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          
           children: [
             Padding(
-              padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
+              padding: EdgeInsets.all(10.0),
               child: PriceItem(
                 price: ' 200.000',
               ),

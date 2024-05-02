@@ -3,6 +3,7 @@ import 'package:fastfoodapp/config/text_them.dart';
 import 'package:fastfoodapp/pagescustom/product_review/widgets/rating.dart';
 import 'package:fastfoodapp/pagescustom/product_review/widgets/total_rating_2.dart';
 import 'package:fastfoodapp/pagescustom/product_review/widgets/user_review.dart';
+import 'package:fastfoodapp/widgetscustom/ItemAppBar.dart';
 import 'package:flutter/material.dart';
 
 class ProductReview extends StatelessWidget {
@@ -12,6 +13,7 @@ class ProductReview extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return Scaffold(
+      appBar: ItemAppBar(title: "Đánh giá"),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
@@ -33,11 +35,10 @@ class ProductReview extends StatelessWidget {
               //
               const UserReviews(),
               const UserReviews(),
-                   const UserReviews(),
-                        const UserReviews(),
-                             const UserReviews(),
-                                  const UserReviews(),
-              
+              const UserReviews(),
+              const UserReviews(),
+              const UserReviews(),
+              const UserReviews(),
             ],
           ),
         ),
