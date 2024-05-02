@@ -18,6 +18,6 @@
     "editor.quickSuggestionsDelay": 5,
     "editor.acceptSuggestionOnEnter": "smart",
     "editor.acceptSuggestionOnCommitCharacter": true,
-    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.enabled": true,
     "editor.snippetSuggestions": "top"
 }

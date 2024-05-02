@@ -1,8 +1,10 @@
 import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/config/text_them.dart';
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pagescustom/address/showaddress.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/section_heading.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class Addresss extends StatelessWidget {
   const Addresss({
@@ -14,10 +16,16 @@ class Addresss extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         SectionHeading(
+        SectionHeading(
           title: 'Địa chỉ ',
           buttonTitle: 'Thay đổi',
-          onPressed: (){},
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return showAdr();
+                });
+          },
         ),
         Text("Anh Nhật", style: TTextTheme.whiteTextTheme.bodyLarge),
         const SizedBox(

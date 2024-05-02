@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
 import 'package:fastfoodapp/pagescustom/Profile.dart';
+import 'package:fastfoodapp/pagescustom/address/showaddress.dart';
 import 'package:fastfoodapp/pagescustom/cart/cart.dart';
 import 'package:fastfoodapp/pagescustom/payment/payment_wiget/success_payment.dart';
 import 'package:fastfoodapp/pagescustom/payment/order_cart.dart';
@@ -32,8 +33,8 @@ class _HomePageState extends State<HomePage> {
     var nameWidgets;
     switch (index) {
       case 0:
-       {
-          return const OrderListItemHis();
+        {
+          return const showAdr();
         }
         nameWidgets = "Home";
         break;
