@@ -1,13 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:fastfoodapp/const.dart';
-<<<<<<< HEAD
-import 'package:fastfoodapp/pagescustom/Profile.dart';
-import 'package:fastfoodapp/pagescustom/address/showaddress.dart';
-=======
 import 'package:fastfoodapp/pagescustom/Home.dart';
 import 'package:fastfoodapp/pagescustom/Menu.dart';
 import 'package:fastfoodapp/pagescustom/Profile/Profile.dart';
->>>>>>> 9ae8d14794fa61973de1ff92af41f1ce418e13e3
 import 'package:fastfoodapp/pagescustom/cart/cart.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/cart_item.dart';
 import 'package:fastfoodapp/widgetscustom/CategoriesWidget.dart';
@@ -42,15 +37,7 @@ class _HomePageState extends State<HomePage> {
     var nameWidgets;
     switch (index) {
       case 0:
-<<<<<<< HEAD
-        {
-          return const showAdr();
-        }
-        nameWidgets = "Home";
-        break;
-=======
         return const Home();
->>>>>>> 9ae8d14794fa61973de1ff92af41f1ce418e13e3
       case 1:
         {
           return const Cart();
