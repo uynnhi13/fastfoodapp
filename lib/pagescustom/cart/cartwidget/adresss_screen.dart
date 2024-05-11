@@ -1,13 +1,16 @@
 import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/config/text_them.dart';
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/pagescustom/address/showaddress.dart';
 import 'package:fastfoodapp/pagescustom/cart/cartwidget/section_heading.dart';
 import 'package:flutter/material.dart';
 
-class Addresss extends StatelessWidget {
-  const Addresss({
-    super.key,
+class AddresssScreen extends StatelessWidget {
+  final String address;
+  const AddresssScreen({
+    super.key, required this.address,
   });
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,20 +20,9 @@ class Addresss extends StatelessWidget {
          SectionHeading(
           title: 'Địa chỉ ',
           buttonTitle: 'Thay đổi',
-          onPressed: (){},
-        ),
-        Text("Anh Nhật", style: TTextTheme.whiteTextTheme.bodyLarge),
-        const SizedBox(
-          height: TSizes.spaceBtwItems / 2,
-        ),
-        Row(
-          children: [
-            const Icon(Icons.phone, color: color_background, size: 16),
-            const SizedBox(
-              width: TSizes.spaceBtwItems / 2,
-            ),
-            Text("0166295555", style: TTextTheme.whiteTextTheme.bodyLarge),
-          ],
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder:(context) => const showAdr(),));
+          },
         ),
         Row(
           children: [
@@ -40,7 +32,7 @@ class Addresss extends StatelessWidget {
               width: TSizes.spaceBtwItems / 2,
             ),
             Expanded(
-                child: Text("12/3 ấp 3 xã phú xuân huyện nhà bè ",
+                child: Text("Địa chỉ: $address",
                     style: TTextTheme.whiteTextTheme.bodyLarge,
                     softWrap: true)),
           ],

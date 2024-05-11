@@ -1,4 +1,4 @@
-import 'package:fastfoodapp/pagescustom/login.dart';
+import 'package:fastfoodapp/pagescustom/auth/login.dart';
 import 'package:fastfoodapp/pagescustom/register.dart';
 import 'package:flutter/material.dart';
 

@@ -14,8 +14,8 @@ class Payment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisSize: MainAxisSize.min
-      ,children: [
+      mainAxisSize: MainAxisSize.min,
+      children: [
          SectionHeading(
           title: 'Phương thức thanh toán',
           buttonTitle: 'Thay đổi',
@@ -39,7 +39,7 @@ class Payment extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
-            Text("Paypal", style: TTextTheme.whiteTextTheme.bodyLarge),
+            Text("Tiền Mặt", style: TTextTheme.whiteTextTheme.bodyLarge),
           ],
         )
       ],

@@ -1,4 +1,4 @@
-import 'package:fastfoodapp/pagescustom/Product1.dart';
+import 'package:fastfoodapp/pagescustom/product/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatelessWidget {
@@ -10,7 +10,7 @@ class Menu extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>Product1()));
+            // Navigator.push(context, MaterialPageRoute(builder: (context)=>Product1()));
           }, 
           child: Text('Go to Product1')
           ),
