@@ -1,296 +1,208 @@
-import 'package:fastfoodapp/pagescustom/login.dart';
+import 'package:fastfoodapp/admin/model/register.dart';
+import 'package:fastfoodapp/const.dart';
 import 'package:flutter/material.dart';
+import 'package:fastfoodapp/config/const.dart';
+import 'package:fastfoodapp/data/api.dart';
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+  const Register({super.key});
 
   @override
   State<Register> createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {
-  String _selectedGender = 'Nam'; // giới tính được mặc định là Nam
-  String _selectedCity = 'Hồ Chí Minh'; //tỉnh thành được chọn
-  DateTime _selectedDate = DateTime.now();
+  int _gender = 0;
+  final TextEditingController _accountController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _numberIDController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController _schoolKeyController = TextEditingController();
+  final TextEditingController _schoolYearController = TextEditingController();
+  final TextEditingController _birthDayController = TextEditingController();
+  final TextEditingController _imageURL = TextEditingController();
+  String gendername = 'None';
+  String temp = '';
 
-  final _nameController = TextEditingController();
-  final _phoneController = TextEditingController();
-  final _passwordController = TextEditingController();
-
-  final List<String> _genders = ['Nam', 'Nữ', 'Khác'];
-  final List<String> _cities = [
-    'Hà Nội',
-    'Hồ Chí Minh',
-    'Đà Nẵng',
-    'Hải Phòng',
-    'Cần Thơ',
-    'Hải Dương',
-    'Bắc Ninh',
-    'Quảng Ninh',
-    'Huế',
-    'Quy Nhơn'
-  ];
-
-  Future<void> _selectDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: _selectedDate,
-      firstDate: DateTime(1900),
-      lastDate: DateTime.now(),
-    );
-    if (picked != null && picked != _selectedDate)
-      setState(() {
-        _selectedDate = picked;
-      });
+  Future<String> register() async {
+    return await APIRepository().register(Signup(
+        accountID: _accountController.text,
+        birthDay: _birthDayController.text,
+        password: _passwordController.text,
+        confirmPassword: _confirmPasswordController.text,
+        fullName: _fullNameController.text,
+        phoneNumber: _phoneNumberController.text,
+        schoolKey: _schoolKeyController.text,
+        schoolYear: _schoolYearController.text,
+        gender: getGender(),
+        imageUrl: _imageURL.text,
+        numberID: _numberIDController.text));
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  appBar: AppBar(
-  backgroundColor: Color.fromARGB(255, 155, 19, 32),
-  leading: Image.asset(
-    'assets/images/logo.png', // Đường dẫn đến tệp ảnh logo
-    width: 40, // Điều chỉnh chiều rộng của ảnh logo tùy ý
-    height: 40, // Điều chỉnh chiều cao của ảnh logo tùy ý
-  ),
-),
-  body: Padding(
-    padding: const EdgeInsets.all(20),
-    child: Center(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              alignment: Alignment.center,
-              child: const Text(
-                'Đăng ký tài khoản',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.red,
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _nameController,
-                    decoration: const InputDecoration(
-                      labelText: "Họ và tên",
-                      //icon: Icon(Icons.person),
-                    ),
-                  ),
-                ],
-              ),
-              padding: EdgeInsets.all(10),
-            ),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _phoneController,
-                    decoration: const InputDecoration(
-                      labelText: "Số điện thoại",
-                      //icon: Icon(Icons.phone),
-                    ),
-                  ),
-                ],
-              ),
-              padding: EdgeInsets.all(10),
-            ),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Column(
-                children: [
-                  TextFormField(
-                    controller: _passwordController,
-                    obscureText: true,
-                    decoration: const InputDecoration(
-                      labelText: "Mật khẩu",
-                      //icon: Icon(Icons.password),
-                    ),
-                  ),
-                ],
-              ),
-              padding: EdgeInsets.all(10),
-            ),
-            SizedBox(height: 20),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+      appBar: AppBar(
+        title: Text(
+          "Đăng ký",
+          style: textTitle(23),
+        ),
+        iconTheme: const IconThemeData(color: color_background),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Container(
-                  padding: EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: Text(
-                    'Ngày sinh: ${_selectedDate.day}/${_selectedDate.month}/${_selectedDate.year}',
-                    style: TextStyle(fontSize: 18),
-                  ),
-                ),
-                SizedBox(width: 20.0),
-                TextButton(
-                  onPressed: () => _selectDate(context),
-                  child: Row(
-                    children: [
-                      Icon(Icons.calendar_today),
-                      SizedBox(width: 5.0),
-                    ],
-                  ),
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.grey[200]!),
-                    padding:
-                        MaterialStateProperty.all<EdgeInsetsGeometry>(
-                            EdgeInsets.all(10.0)),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                      ),
-                    ),
-                  ),
-                ),
+                signUpWidget(),
               ],
             ),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Column(
-                children: [
-                  DropdownButtonFormField<String>(
-                    value: _selectedGender,
-                    items: _genders.map((String gender) {
-                      return DropdownMenuItem<String>(
-                        value: gender,
-                        child: Text(gender),
-                      );
-                    }).toList(),
-                    onChanged: (String? value) {
-                      setState(() {
-                        if (value != null) _selectedGender = value;
-                      });
-                    },
-                    decoration: InputDecoration(labelText: 'Giới tính'),
-                  ),
-                ],
-              ),
-              padding: EdgeInsets.all(10),
-            ),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Column(
-                children: [
-                  DropdownButtonFormField<String>(
-                    value: _selectedCity,
-                    items: _cities.map((String city) {
-                      return DropdownMenuItem<String>(
-                        value: city,
-                        child: Text(city),
-                      );
-                    }).toList(),
-                    onChanged: (String? value) {
-                      setState(() {
-                        if (value != null) _selectedCity = value;
-                      });
-                    },
-                    decoration: InputDecoration(labelText: 'Tỉnh thành'),
-                  ),
-                ],
-              ),
-              padding: EdgeInsets.all(10),
-            ),
-            SizedBox(height: 20),
-           ElevatedButton(
-            onPressed: () {
-            // Kiểm tra xem các trường thông tin đã được nhập đầy đủ hay chưa
-            if (_nameController.text.isEmpty ||
-                _phoneController.text.isEmpty ||
-                _passwordController.text.isEmpty) {
-            // Nếu còn trường thông tin nào đó chưa được nhập, hiển thị thông báo
-            ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Hãy nhập đầy đủ thông tin!'),
-              duration: Duration(seconds: 2),
-            ),
-      );
-    } else {
-      // Nếu các trường thông tin đã được nhập đầy đủ, xử lý đăng ký tài khoản
-      // Hiển thị snackbar sau khi đăng ký thành công
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Đăng ký thành công!'),
-          duration: Duration(seconds: 2),
-        ),
-      );
-    }
-  },
-            child: Text('Đăng ký', style: TextStyle(color: Colors.white)),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color.fromARGB(255, 155, 19, 32),
-                ),
-  
           ),
-          SizedBox(height: 20),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Nếu đã có tài khoản, ',
-                style: TextStyle(
-                fontSize: 16,
-                color: Colors.black,
-                ),
-              ),
-              TextButton(
-              onPressed: () {
-              // Chuyển hướng đến trang đăng nhập
-                Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Login()),
-              );
-            },
-              child: Text(
-                'đăng nhập',
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.red,
-                  ),
-                ),
-    ),
-  ],
-),
-          ],
         ),
       ),
-    ),
-  ),
-);
+    );
+  }
 
+  getGender() {
+    if (_gender == 1) {
+      return "Male";
+    } else if (_gender == 2) {
+      return "Female";
+    }
+    return "Other";
+  }
+
+  Widget textField(
+      TextEditingController controller, String label, IconData icon) {
+    return Container(
+      margin: const EdgeInsets.symmetric(vertical: 10),
+      child: TextFormField(
+        controller: controller,
+        obscureText: label.contains('word'),
+        onChanged: (value) {
+          setState(() {
+            temp = value;
+          });
+        },
+        decoration: InputDecoration(
+            labelText: label,
+            icon: Icon(icon),
+            border: const OutlineInputBorder(),
+            errorText: controller.text.trim().isEmpty ? 'Please enter' : null,
+            focusedErrorBorder: controller.text.isEmpty
+                ? const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red))
+                : null,
+            errorBorder: controller.text.isEmpty
+                ? const OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red))
+                : null),
+      ),
+    );
+  }
+
+  Widget signUpWidget() {
+    return Column(
+      children: [
+        textField(_accountController, "Account", Icons.person),
+        textField(_numberIDController, "NumberID", Icons.key),
+        textField(_phoneNumberController, "PhoneNumber", Icons.phone),
+        textField(_birthDayController, "BirthDay", Icons.date_range),
+        textField(_schoolYearController, "SchoolYear", Icons.school),
+        textField(_schoolKeyController, "SchoolKey", Icons.school),
+        const Text("What is your Gender?"),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(0),
+                title: const Text("Male"),
+                leading: Transform.translate(
+                  offset: const Offset(16, 0),
+                  child: Radio(
+                    value: 1,
+                    groupValue: _gender,
+                    onChanged: (value) {
+                      setState(() {
+                        _gender = value!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(0),
+                title: const Text("Female"),
+                leading: Transform.translate(
+                  offset: const Offset(16, 0),
+                  child: Radio(
+                    value: 2,
+                    groupValue: _gender,
+                    onChanged: (value) {
+                      setState(() {
+                        _gender = value!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              child: ListTile(
+                contentPadding: const EdgeInsets.all(0),
+                title: const Text("Other"),
+                leading: Transform.translate(
+                  offset: const Offset(16, 0),
+                  child: Radio(
+                    value: 3,
+                    groupValue: _gender,
+                    onChanged: (value) {
+                      setState(() {
+                        _gender = value!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 16,
+        ),
+        TextFormField(
+          controller: _imageURL,
+          decoration: const InputDecoration(
+            labelText: "Image URL",
+            icon: Icon(Icons.image),
+          ),
+        ),
+        ElevatedButton(
+          onPressed: register,
+          child: const Text(
+            "Đăng Ký",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+          ),
+          style: ElevatedButton.styleFrom(
+            minimumSize: Size.fromHeight(55),
+            backgroundColor: color_background,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
+        ),
+      ],
+    );
   }
 }

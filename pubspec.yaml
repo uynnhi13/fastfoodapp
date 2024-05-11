@@ -18,7 +18,8 @@ dependencies:
   get_storage: ^2.1.1
   iconsax: ^0.0.8
   readmore: ^2.2.0
-  
+  json_annotation: ^4.9.0
+  table_calendar: ^3.0.9
 
   # thư viện cho phần ở details product
   clippy_flutter: ^2.0.0-nullsafety.1
@@ -27,11 +28,20 @@ dependencies:
   flutterflow_ui: ^0.2.0+1
   http: ^0.13.3
   carousel_slider: ^4.2.1 
-  intl: ^0.19.0 
+  intl: ^0.18.0 
   # thư viện cho sql
   sqflite: ^2.2.6
   path: ^1.8.2
-
+  #cho api
+  dio: ^5.4.0
+  shared_preferences: ^2.2.2
+  # images
+  image_picker: ^1.0.4
+  # export file json.map
+  json_serializable: ^6.8.0
+  build_runner: ^2.0.5
+  lottie: ^2.1.0
+  introduction_screen: ^3.1.14
 
 dev_dependencies:
   flutter_test:
@@ -51,5 +61,6 @@ flutter:
   - assets/foods/Bestsell/
   - assets/banner/
   - assets/admin/
+  - assets/startpage/
   
 

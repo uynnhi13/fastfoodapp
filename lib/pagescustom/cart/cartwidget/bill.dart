@@ -1,11 +1,17 @@
 import 'package:fastfoodapp/config/sizes.dart';
 import 'package:fastfoodapp/config/text_them.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-class Billing extends StatelessWidget {
-  const Billing({
-    super.key,
-  });
+class Billing extends StatefulWidget {
+  final double tongtien;
+  Billing({super.key,required this.tongtien});
+
+  @override
+  _BillingState createState() => _BillingState();
+}
+
+class _BillingState extends State<Billing> {
 
   @override
   Widget build(BuildContext context) {
@@ -15,26 +21,10 @@ class Billing extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text("Tổng tiền ", style: TTextTheme.whiteTextTheme.bodyLarge),
-            Text("200.000vnd", style: TTextTheme.whiteTextTheme.bodyMedium)
+            Text(NumberFormat('#,##0').format(widget.tongtien)),
           ],
         ),
         const SizedBox(height: TSizes.spaceBtwItems / 2),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text("Phí vận chuyển ",
-                style: TTextTheme.whiteTextTheme.bodyLarge),
-            Text("20.000vnd", style: TTextTheme.whiteTextTheme.bodyMedium)
-          ],
-        ),
-        const SizedBox(height: TSizes.spaceBtwItems / 2),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text("Thuế", style: TTextTheme.whiteTextTheme.bodyLarge),
-            Text("10.000vnd", style: TTextTheme.whiteTextTheme.bodyMedium)
-          ],
-        ),
       ],
     );
   }

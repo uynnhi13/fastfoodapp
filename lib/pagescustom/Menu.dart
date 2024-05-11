@@ -1,4 +1,4 @@
-import 'package:fastfoodapp/pagescustom/Product1.dart';
+import 'package:fastfoodapp/pagescustom/product/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class Menu extends StatelessWidget {

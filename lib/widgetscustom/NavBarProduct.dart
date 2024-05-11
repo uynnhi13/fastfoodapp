@@ -1,8 +1,12 @@
 import 'package:fastfoodapp/const.dart';
+import 'package:fastfoodapp/data/sqlite.dart';
+import 'package:fastfoodapp/model/cart.dart';
+import 'package:fastfoodapp/model/product.dart';
 import 'package:flutter/material.dart';
 
 class ItemBottomNavBarProduct extends StatefulWidget {
-  const ItemBottomNavBarProduct({Key? key}) : super(key: key);
+  ProductModel product;
+  ItemBottomNavBarProduct({super.key, required this.product});
 
   @override
   _ItemBottomNavBarProductState createState() =>
@@ -10,55 +14,42 @@ class ItemBottomNavBarProduct extends StatefulWidget {
 }
 
 class _ItemBottomNavBarProductState extends State<ItemBottomNavBarProduct> {
-  //quantity
-  int quantiCount = 0;
 
-  //decrement quantity
-  void decrementQuantity() {
-    setState(() {
-      if(quantiCount>0){
-        quantiCount--;
-      }
-      
-    });
-  }
-
-  //increment quantity
-  void incrementQuantity() {
-    setState(() {
-      quantiCount++;
-    });
-  }
-
-  //add to cart
-  void addToCart(){
-    
-    if(quantiCount>0){
-      //thông báo giỏ hàng thành công
-    showDialog(
-      barrierDismissible: false,
-      context: context, 
-      builder: (context)=>AlertDialog(
-        backgroundColor: color_background,
-        content: Text("Thêm vào giỏ hàng thành công",
-          style: TextStyle(color: Colors.white),
-          textAlign: TextAlign.center,
+  _addToCart(ProductModel product) async {
+    Cart productAdd = Cart(
+        name: product.name,
+        price: product.price,
+        img: product.imgURL,
+        des: product.desc,
+        count: 1,
+        productID: product.id!);
+    await DatabaseHelper().addProduct(productAdd);
+    // Hiển thị SnackBar
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(
+          'Đã thêm ${product.name} vào giỏ hàng',
+          style: const TextStyle(fontSize: 18),
         ),
-        actions: [
-          //okay button
-          IconButton(
-            onPressed: (){
-              //pop once to remove dialog box
-              Navigator.pop(context);
-              //pop again to go previous screen
-              Navigator.pop(context);
-            }, 
-            icon: Icon(Icons.done, color: Colors.white,),
-            )
-        ],
+        duration: Duration(seconds: 2),
+        margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 300),
+        padding: const EdgeInsets.symmetric(
+            vertical: 20, horizontal: 16), // Thiết lập padding
+        shape: RoundedRectangleBorder(
+          // Thiết lập shape
+          borderRadius: BorderRadius.circular(8),
+        ),
+        behavior: SnackBarBehavior.floating,
+        backgroundColor:
+            color_background, // Đặt thời gian hiển thị SnackBar là 2 giây
       ),
-      );
-    }
+    );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
   }
 
   @override
@@ -83,79 +74,31 @@ class _ItemBottomNavBarProductState extends State<ItemBottomNavBarProduct> {
                   fontSize: 18,
                 ),
               ),
-              //quantity
-              Row(
-                children: [
-                  //minus button
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(242, 213, 211, 0.5),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.remove,
-                        size: 18,
-                      ),
-                      onPressed: decrementQuantity,
-                    ),
-                  ),
-                  //quantity count
-                  SizedBox(
-                    width: 40,
-                    child: Center(
-                      child: Text(
-                        quantiCount.toString(),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ),
-                  ),
-
-                  //plus button
-                  Container(
-                    height: 40,
-                    width: 40,
-                    decoration: BoxDecoration(
-                      color: Color.fromRGBO(242, 213, 211, 0.5),
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      icon: Icon(
-                        Icons.add,
-                        size: 18,
-                      ),
-                      onPressed: incrementQuantity,
-                    ),
-                  )
-                ],
-              ),
-            ],
+          const SizedBox(
+            height: 25,
           ),
-          const SizedBox(height: 25,),
-        
+
           //add cart bottom
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: addToCart, 
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(15),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)
+                onPressed: () async {
+                  await _addToCart(widget.product);
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.all(15),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
+                  backgroundColor: Color.fromRGBO(242, 213, 211, 0.5),
                 ),
-                backgroundColor: Color.fromRGBO(242, 213, 211, 0.5),
-              ),
-              child: const Text('Thêm vào giỏ hàng', style: TextStyle(color: Colors.white),)
-            ),
+                child: const Text(
+                  'Thêm vào giỏ hàng',
+                  style: TextStyle(color: Colors.white),
+                )),
           ),
         ],
       ),
+    ])
     );
-  }
+}
 }
